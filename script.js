@@ -1,7 +1,20 @@
+// Funzione di login
+function login() {
+    var password = document.getElementById("password").value;
+
+    // Controlla se la password è corretta
+    if (password === "ellenmezza20") { // Assicurati di inserire la password corretta
+        // Reindirizza all'app To-Do List
+        window.location.href = "todo.html";
+    } else {
+        alert("Password incorrect. Please try again.");
+    }
+}
+
 // Funzione di logout
 function logout() {
     // Reindirizza alla pagina di login
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 // Funzione per caricare i task salvati nel local storage
