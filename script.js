@@ -4,6 +4,21 @@ function logout() {
     window.location.href = "login.html";
 }
 
+// Funzione per caricare i task salvati nel local storage
+function loadTasks() {
+    var savedTasks = localStorage.getItem("tasks");
+    if (savedTasks) {
+        var taskList = document.getElementById("taskList");
+        taskList.innerHTML = savedTasks;
+    }
+}
+
+// Funzione per salvare i task nel local storage
+function saveTasks() {
+    var taskList = document.getElementById("taskList").innerHTML;
+    localStorage.setItem("tasks", taskList);
+}
+
 // Funzione per aggiungere un task
 function addTask() {
     var taskInput = document.getElementById("taskInput");
@@ -29,8 +44,26 @@ function addTask() {
 
         // Resetta il campo di input
         taskInput.value = "";
+
+        // Salva i task nel local storage
+        saveTasks();
     }
 }
+
+// Funzione per eliminare un task
+function deleteTask(taskItem) {
+    var taskList = document.getElementById("taskList");
+    taskList.removeChild(taskItem);
+
+    // Salva i task nel local storage
+    saveTasks();
+}
+
+// Carica i task salvati al caricamento della pagina
+window.onload = function() {
+    loadTasks();
+};
+
 
 // Funzione per eliminare un task
 function deleteTask(taskItem) {
