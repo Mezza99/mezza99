@@ -15,57 +15,89 @@
     </div>
 
     <script>
-        // Carica i task dal Local Storage quando la pagina si carica
-        window.onload = function() {
-            loadTasks();
+       // Carica i task dal Local Storage quando la pagina si carica
+window.onload = function() {
+    loadTasks();
+};
+
+// Aggiunge un nuovo task alla lista e al Local Storage
+function addTask() {
+    var taskInput = document.getElementById("taskInput");
+    var taskList = document.getElementById("taskList");
+    var task = taskInput.value;
+
+    if (task.trim() !== "") {
+        // Crea un nuovo elemento di lista
+        var listItem = document.createElement("li");
+        listItem.textContent = task;
+
+        // Aggiungi il task alla lista visiva
+        taskList.appendChild(listItem);
+
+        // Aggiungi un pulsante di cancellazione
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function() {
+            deleteTask(listItem);
         };
+        listItem.appendChild(deleteButton);
 
-        // Aggiunge un nuovo task alla lista e al Local Storage
-        function addTask() {
-            var taskInput = document.getElementById("taskInput");
-            var taskList = document.getElementById("taskList");
-            var task = taskInput.value;
+        // Salva il task nel Local Storage
+        saveTask(task);
 
-            if (task.trim() !== "") {
-                // Crea un nuovo elemento di lista
-                var listItem = document.createElement("li");
-                listItem.textContent = task;
+        // Resetta il campo di input
+        taskInput.value = "";
+    }
+}
 
-                // Aggiungi il task alla lista visiva
-                taskList.appendChild(listItem);
+// Salva un task nel Local Storage
+function saveTask(task) {
+    // Recupera i task esistenti dal Local Storage
+    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-                // Salva il task nel Local Storage
-                saveTask(task);
+    // Aggiungi il nuovo task alla lista
+    tasks.push(task);
 
-                // Resetta il campo di input
-                taskInput.value = "";
-            }
-        }
+    // Salva la lista aggiornata nel Local Storage
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
-        // Salva un task nel Local Storage
-        function saveTask(task) {
-            // Recupera i task esistenti dal Local Storage
-            var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+// Carica i task dal Local Storage
+function loadTasks() {
+    var taskList = document.getElementById("taskList");
+    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-            // Aggiungi il nuovo task alla lista
-            tasks.push(task);
+    // Aggiungi i task salvati alla lista visiva
+    tasks.forEach(function(task) {
+        var listItem = document.createElement("li");
+        listItem.textContent = task;
 
-            // Salva la lista aggiornata nel Local Storage
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-        }
+        // Aggiungi un pulsante di cancellazione
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.onclick = function() {
+            deleteTask(listItem);
+        };
+        listItem.appendChild(deleteButton);
 
-        // Carica i task dal Local Storage
-        function loadTasks() {
-            var taskList = document.getElementById("taskList");
-            var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+        taskList.appendChild(listItem);
+    });
+}
 
-            // Aggiungi i task salvati alla lista visiva
-            tasks.forEach(function(task) {
-                var listItem = document.createElement("li");
-                listItem.textContent = task;
-                taskList.appendChild(listItem);
-            });
-        }
+// Rimuove un task dalla lista e dal Local Storage
+function deleteTask(taskItem) {
+    var taskList = document.getElementById("taskList");
+    taskList.removeChild(taskItem);
+
+    // Rimuove il task dal Local Storage
+    var tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    var taskIndex = Array.prototype.indexOf.call(taskList.children, taskItem);
+    if (taskIndex !== -1) {
+        tasks.splice(taskIndex, 1);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+}
+
     </script>
 </body>
 </html>
