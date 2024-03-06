@@ -1,4 +1,10 @@
-/* Stili per la schermata di login */
+/* Stili globali */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Stili specifici per la schermata di login */
 body {
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
@@ -46,17 +52,73 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Aggiungi qualche decorazione aggiuntiva */
-.illustration {
-    margin-bottom: 30px;
+/* Stili per la lista dei To-Do */
+body {
+background-color: #f0f0f0;
+font-family: Arial, sans-serif;
 }
 
-.illustration img {
-    width: 200px;
+.container {
+max-width: 600px;
+margin: 50px auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
 }
 
-.footer {
-    margin-top: 30px;
-    color: #666;
-    font-size: 14px;
+h1 {
+color: #333;
+text-align: center;
+}
+
+#taskInput {
+width: calc(100% - 100px);
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+}
+
+#addTaskBtn {
+width: 100px;
+padding: 10px;
+margin-bottom: 10px;
+background-color: #007bff;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+text-transform: uppercase;
+}
+
+#addTaskBtn:hover {
+background-color: #0056b3;
+}
+
+ul {
+list-style-type: none;
+padding: 0;
+}
+
+li {
+padding: 10px;
+margin-bottom: 5px;
+background-color: #f9f9f9;
+border-radius: 5px;
+box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
+}
+
+.deleteTaskBtn {
+float: right;
+background: none;
+border: none;
+color: #dc3545;
+cursor: pointer;
+}
+
+.deleteTaskBtn:hover {
+color: #c82333;
 }
