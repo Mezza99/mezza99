@@ -3,92 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>Simple To-Do List App</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Stili per la lista dei To-Do */
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-        }
-
-        h1 {
-            color: #333;
-            text-align: center;
-        }
-
-        #taskInput {
-            width: calc(100% - 100px);
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        #addTaskBtn {
-            width: 100px;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            text-transform: uppercase;
-        }
-
-        #addTaskBtn:hover {
-            background-color: #0056b3;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            padding: 10px;
-            margin-bottom: 5px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
-        }
-
-        .deleteTaskBtn {
-            float: right;
-            background: none;
-            border: none;
-            color: #dc3545;
-            cursor: pointer;
-        }
-
-        .deleteTaskBtn:hover {
-            color: #c82333;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <h1>To-Do List</h1>
         <input type="text" id="taskInput" placeholder="Enter task...">
-        <button id="addTaskBtn" onclick="addTask()">Add Task</button>
+        <button onclick="addTask()">Add Task</button>
         <ul id="taskList"></ul>
         <h2>Completed Tasks</h2>
         <ul id="completedList"></ul>
+        <button onclick="showMessage()" class="showMessageBtn">Show Message</button>
         <button onclick="logout()" class="logoutBtn">Logout</button>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
