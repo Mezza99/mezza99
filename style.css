@@ -1,3 +1,4 @@
+/* Stili per la schermata di login */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -39,6 +40,8 @@ button:hover {
     height: auto;
 }
 
+
+/* Stili per la schermata dei todo */
 .logoutBtn {
     float: right;
 }
