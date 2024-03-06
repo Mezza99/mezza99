@@ -23,17 +23,39 @@
             color: #007bff;
         }
 
-        /* Stili per la nave */
-        .ship {
-            width: 100px;
-            height: 50px;
-            background-color: #fff;
-            border-radius: 10px;
+        /* Stili per il motoscafo */
+        .motorboat {
+            width: 200px;
+            height: 80px;
+            background-color: brown;
             position: absolute;
             bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
-            animation: sail 4s linear infinite;
+            clip-path: polygon(0 0, 100% 0, 80% 100%, 20% 100%);
+        }
+
+        /* Stili per la bandiera dei pirati */
+        .flag {
+            width: 30px;
+            height: 40px;
+            background-color: black;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        .skull {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         /* Stili per le onde del mare */
@@ -55,15 +77,6 @@
                 transform: translateY(-10px);
             }
         }
-
-        @keyframes sail {
-            0% {
-                transform: translateX(-50%) rotate(0deg);
-            }
-            100% {
-                transform: translateX(-50%) rotate(360deg);
-            }
-        }
     </style>
 </head>
 <body>
@@ -74,8 +87,14 @@
             <div class="drawing">🎨✏️</div>
         </div>
 
-        <!-- Nave che naviga sopra delle onde -->
-        <div class="ship"></div>
+        <!-- Motoscafo con bandiera dei pirati -->
+        <div class="motorboat">
+            <div class="flag">
+                <div class="skull"></div>
+            </div>
+        </div>
+
+        <!-- Onde del mare -->
         <div class="wave"></div>
 
         <!-- Form per il login -->
