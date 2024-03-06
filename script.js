@@ -1,9 +1,9 @@
-// Funzione di login
 function login() {
     var password = document.getElementById("password").value;
 
     // Controlla se la password è corretta
     if (password === "ellenmezza20") {
+        console.log("Login successful!"); // Aggiunto per debugging
         // Reindirizza all'app To-Do List
         window.location.href = "todo.html";
     } else {
