@@ -28,9 +28,10 @@
             width: 200px;
             height: 80px;
             position: absolute;
-            bottom: 20px;
+            bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 1; /* Assicura che il motoscafo sia sopra le onde */
         }
 
         .motorboat-body {
@@ -74,6 +75,7 @@
             height: 20px;
             background: linear-gradient(90deg, transparent, #007bff, transparent);
             animation: wave 1s ease infinite alternate;
+            z-index: 0; /* Assicura che le onde siano sotto il motoscafo */
         }
 
         @keyframes wave {
