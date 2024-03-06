@@ -1,128 +1,48 @@
-/* Stili globali */
 body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Stili per la schermata di login */
-body {
-    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
 
 .container {
     max-width: 400px;
     margin: 100px auto;
-    padding: 30px;
+    padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
 }
 
 input[type="password"] {
     width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 button {
+    width: 100%;
+    padding: 10px;
     background-color: #007bff;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    text-transform: uppercase;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-/* Stili per la lista dei To-Do */
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #333;
-    text-align: center;
-}
-
-#taskInput {
-    width: calc(100% - 100px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-button.addTaskBtn {
+.sunImage {
+    display: block;
+    margin: 0 auto;
     width: 100px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-transform: uppercase;
-}
-
-button.addTaskBtn:hover {
-    background-color: #0056b3;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    padding: 10px;
-    margin-bottom: 5px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
-}
-.completed {
-    text-decoration: line-through;
-    color: #999;
-
-.deleteTaskBtn {
-    float: right;
-    background: none;
-    border: none;
-    color: #dc3545;
-    cursor: pointer;
-}
-
-.deleteTaskBtn:hover {
-    color: #c82333;
+    height: auto;
 }
 
 .logoutBtn {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
+    float: right;
+}
+
+.showMessageBtn {
+    margin-top: 20px;
 }
