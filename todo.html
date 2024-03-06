@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -14,19 +16,6 @@
         <ul id="taskList">
             <!-- Task List -->
         </ul>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
-</head>
-<body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Enter task...">
-        <button onclick="addTask()">Add Task</button>
-        <ul id="taskList"></ul>
     </div>
 
     <script>
@@ -51,7 +40,7 @@
 
                 // Aggiungi un pulsante di cancellazione
                 var deleteButton = document.createElement("button");
-                deleteButton.textContent = "Delete";
+                deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
                 deleteButton.onclick = function() {
                     deleteTask(listItem);
                 };
@@ -89,7 +78,7 @@
 
                 // Aggiungi un pulsante di cancellazione
                 var deleteButton = document.createElement("button");
-                deleteButton.textContent = "Delete";
+                deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
                 deleteButton.onclick = function() {
                     deleteTask(listItem);
                 };
@@ -112,10 +101,6 @@
                 localStorage.setItem("tasks", JSON.stringify(tasks));
             }
         }
-    </script>
-</body>
-</html>
-
     </script>
 </body>
 </html>
