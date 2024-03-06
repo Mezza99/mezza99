@@ -36,6 +36,15 @@ function addTask() {
         };
         listItem.appendChild(deleteButton);
 
+        // Aggiungi un pulsante per segnare il task come completato
+        var completeButton = document.createElement("button");
+        completeButton.innerHTML = 'Complete';
+        completeButton.className = "completeTaskBtn";
+        completeButton.onclick = function() {
+            completeTask(listItem);
+        };
+        listItem.appendChild(completeButton);
+
         // Aggiungi il task alla lista visiva
         taskList.appendChild(listItem);
 
@@ -66,6 +75,12 @@ function completeTask(taskItem) {
 
     // Salva i task nel local storage
     saveTasks();
+}
+
+// Funzione per il logout
+function logout() {
+    // Reindirizza alla pagina di login
+    window.location.href = "login.html";
 }
 
 // Carica i task salvati al caricamento della pagina
