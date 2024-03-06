@@ -3,7 +3,7 @@ function login() {
     var password = document.getElementById("password").value;
 
     // Controlla se la password è corretta
-    if (password === "ellenmezza20") {
+    if (password === "lnm20") {
         // Reindirizza all'app To-Do List
         window.location.href = "todo.html";
     } else {
@@ -14,7 +14,7 @@ function login() {
 // Funzione di logout
 function logout() {
     // Reindirizza alla pagina di login
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 // Funzione per caricare i task salvati nel local storage
