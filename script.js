@@ -14,7 +14,7 @@ function login() {
 // Funzione di logout
 function logout() {
     // Reindirizza alla pagina di login
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 // Funzione per caricare i task salvati nel local storage
