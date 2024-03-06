@@ -35,10 +35,12 @@ function addTask() {
 
         // Aggiungi un pulsante di cancellazione
         var deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
+        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
         deleteButton.className = "deleteTaskBtn";
         deleteButton.onclick = function() {
-            deleteTask(listItem);
+            if (confirm("Are you sure you want to delete this task?")) {
+                deleteTask(listItem);
+            }
         };
         listItem.appendChild(deleteButton);
 
@@ -63,10 +65,3 @@ function deleteTask(taskItem) {
 window.onload = function() {
     loadTasks();
 };
-
-
-// Funzione per eliminare un task
-function deleteTask(taskItem) {
-    var taskList = document.getElementById("taskList");
-    taskList.removeChild(taskItem);
-}
