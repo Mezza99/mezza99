@@ -46,6 +46,15 @@ function addTask() {
         // Aggiungi il task alla lista visiva
         taskList.appendChild(listItem);
 
+        // Aggiungi un pulsante di completamento
+        var completeButton = document.createElement("button");
+        completeButton.textContent = "Complete";
+        completeButton.className = "completeTaskBtn";
+        completeButton.onclick = function() {
+            completeTask(listItem);
+        };
+        listItem.appendChild(completeButton);
+
         // Aggiungi un pulsante di cancellazione
         var deleteButton = document.createElement("button");
         deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
@@ -64,6 +73,13 @@ function addTask() {
         saveTasks();
     }
 }
+// Funzione per completare un task
+function completeTask(taskItem) {
+    var completedList = document.getElementById("completedList");
+    completedList.appendChild(taskItem);
+
+    // Rimuovi il pulsante di completamento
+    taskItem.removeChild(taskItem.getElementsByClassName("completeTaskBtn")[0]);
 
 // Funzione per eliminare un task
 function deleteTask(taskItem) {
