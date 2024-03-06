@@ -46,53 +46,12 @@ function addTask() {
         // Aggiungi il task alla lista visiva
         taskList.appendChild(listItem);
 
-        // Aggiungi un pulsante di completamento
-        var completeButton = document.createElement("button");
-        completeButton.textContent = "Complete";
-        completeButton.className = "completeTaskBtn";
-        completeButton.onclick = function() {
-            completeTask(listItem);
-        };
-        listItem.appendChild(completeButton);
-
-        // Aggiungi un pulsante di cancellazione
-        var deleteButton = document.createElement("button");
-        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        deleteButton.className = "deleteTaskBtn";
-        deleteButton.onclick = function() {
-            if (confirm("Are you sure you want to delete this task?")) {
-                deleteTask(listItem);
-            }
-        };
-        listItem.appendChild(deleteButton);
-
         // Resetta il campo di input
         taskInput.value = "";
 
         // Salva i task nel local storage
         saveTasks();
     }
-}
-
-// Funzione per completare un task
-function completeTask(taskItem) {
-    var completedList = document.getElementById("completedList");
-    completedList.appendChild(taskItem);
-
-    // Rimuovi il pulsante di completamento
-    taskItem.removeChild(taskItem.getElementsByClassName("completeTaskBtn")[0]);
-
-    // Salva i task nel local storage
-    saveTasks();
-}
-
-// Funzione per eliminare un task
-function deleteTask(taskItem) {
-    var taskList = document.getElementById("taskList");
-    taskList.removeChild(taskItem);
-
-    // Salva i task nel local storage
-    saveTasks();
 }
 
 // Carica i task salvati al caricamento della pagina
