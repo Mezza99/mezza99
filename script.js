@@ -1,20 +1,7 @@
-function login() {
-    var password = document.getElementById("password").value;
-
-    // Controlla se la password è corretta
-    if (password === "ellenmezza20") {
-        console.log("Login successful!"); // Aggiunto per debugging
-        // Reindirizza all'app To-Do List
-        window.location.href = "todo.html";
-    } else {
-        alert("Password incorrect. Please try again.");
-    }
-}
-
 // Funzione di logout
 function logout() {
     // Reindirizza alla pagina di login
-    window.location.href = "index.html";
+    window.location.href = "login.html";
 }
 
 // Funzione per aggiungere un task
@@ -33,8 +20,8 @@ function addTask() {
 
         // Aggiungi un pulsante di cancellazione
         var deleteButton = document.createElement("button");
-        deleteButton.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        deleteButton.className = "delete";
+        deleteButton.textContent = "Delete";
+        deleteButton.className = "deleteTaskBtn";
         deleteButton.onclick = function() {
             deleteTask(listItem);
         };
