@@ -3,7 +3,7 @@ function login() {
     var password = document.getElementById("password").value;
 
     // Controlla se la password è corretta
-    if (password === "password123") {
+    if (password === "ellenmezza20") {
         // Reindirizza all'app To-Do List
         window.location.href = "todo.html";
     } else {
