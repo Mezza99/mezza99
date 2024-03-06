@@ -4,80 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 400px;
-            margin: 100px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-        }
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <h2>Login</h2>
-        <input type="password" id="password" placeholder="Enter password...">
-        <button onclick="checkPassword()">Login</button>
+        <form id="loginForm">
+            <input type="password" id="password" placeholder="Enter password...">
+            <button type="submit">Login</button>
+        </form>
     </div>
 
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple To-Do List App</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Enter task...">
-        <button onclick="addTask()">Add Task</button>
-        <ul id="taskList"></ul>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>To-Do List</h1>
-    <input type="text" id="taskInput">
-    <button onclick="addTask()">Add Task</button>
-    <ul id="taskList"></ul>
+    <script>
+        // Gestione del login e del reindirizzamento
+        function login() {
+            var password = document.getElementById("password").value;
+            // Inserisci qui la tua logica per verificare la password
+            if (password === "password123") {
+                // Reindirizzamento alla seconda pagina dopo il login
+                window.location.href = "todo.html";
+            } else {
+                alert("Password incorrect. Please try again.");
+            }
+        }
 
-    <script src="script.js"></script>
+        // Aggiungi un gestore di eventi per il form del login
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Previeni il comportamento predefinito del modulo
+            login(); // Esegui la funzione di login
+        });
+    </script>
 </body>
 </html>
