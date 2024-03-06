@@ -1,3 +1,22 @@
+// Funzione di login
+function login() {
+    var password = document.getElementById("password").value;
+
+    // Controlla se la password è corretta
+    if (password === "ellenmezza20") {
+        // Reindirizza all'app To-Do List
+        window.location.href = "todo.html";
+    } else {
+        alert("Password incorrect. Please try again.");
+    }
+}
+
+// Funzione di logout
+function logout() {
+    // Reindirizza alla pagina di login
+    window.location.href = "login.html";
+}
+
 // Funzione per caricare i task salvati nel local storage
 function loadTasks() {
     var savedTasks = localStorage.getItem("tasks");
@@ -36,15 +55,6 @@ function addTask() {
         };
         listItem.appendChild(deleteButton);
 
-        // Aggiungi un pulsante per segnare il task come completato
-        var completeButton = document.createElement("button");
-        completeButton.innerHTML = 'Complete';
-        completeButton.className = "completeTaskBtn";
-        completeButton.onclick = function() {
-            completeTask(listItem);
-        };
-        listItem.appendChild(completeButton);
-
         // Aggiungi il task alla lista visiva
         taskList.appendChild(listItem);
 
@@ -75,12 +85,6 @@ function completeTask(taskItem) {
 
     // Salva i task nel local storage
     saveTasks();
-}
-
-// Funzione per il logout
-function logout() {
-    // Reindirizza alla pagina di login
-    window.location.href = "login.html";
 }
 
 // Carica i task salvati al caricamento della pagina
