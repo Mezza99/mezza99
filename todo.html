@@ -3,115 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple To-Do List App</title>
+    <title>To-Do List</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Stili specifici per la lista dei to-do */
+        /* Stili per la lista dei To-Do */
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
         .container {
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
-            background-color: #f9f9f9;
+            background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
         }
 
         h1 {
-            margin-bottom: 30px;
             color: #333;
-            font-size: 36px;
-            text-transform: uppercase;
+            text-align: center;
         }
 
-        input[type="text"] {
-            width: 60%;
+        #taskInput {
+            width: calc(100% - 100px);
             padding: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            box-sizing: border-box;
             font-size: 16px;
         }
 
-        button {
-            padding: 10px 20px;
+        #addTaskBtn {
+            width: 100px;
+            padding: 10px;
+            margin-bottom: 10px;
             background-color: #007bff;
-            color: #fff;
+            color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-left: 10px;
             font-size: 16px;
             text-transform: uppercase;
         }
 
-        button:hover {
+        #addTaskBtn:hover {
             background-color: #0056b3;
         }
 
         ul {
             list-style-type: none;
             padding: 0;
-            text-align: left;
         }
 
         li {
-            background-color: #fff;
-            padding: 15px;
-            border-bottom: 1px solid #ccc;
-            margin-bottom: 15px;
-            position: relative;
-            font-size: 18px;
-        }
-
-        .delete-button {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            background-color: #ff6347;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
+            padding: 10px;
+            margin-bottom: 5px;
+            background-color: #f9f9f9;
             border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.1);
         }
 
-        .delete-button:hover {
-            background-color: #d32f2f;
-        }
-
-        /* Stili per il logout */
-        .logout-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: #333;
-            color: #fff;
+        .deleteTaskBtn {
+            float: right;
+            background: none;
             border: none;
-            padding: 15px 20px;
-            border-radius: 5px;
+            color: #dc3545;
             cursor: pointer;
-            font-size: 16px;
-            text-transform: uppercase;
         }
 
-        .logout-button:hover {
-            background-color: #555;
+        .deleteTaskBtn:hover {
+            color: #c82333;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Add a new task...">
-        <button onclick="addTask()">Add Task</button>
+        <input type="text" id="taskInput" placeholder="Enter task...">
+        <button id="addTaskBtn" onclick="addTask()">Add Task</button>
         <ul id="taskList"></ul>
-        <button class="logout-button" onclick="logout()">Logout</button>
-        <p style="margin-top: 30px;">Enjoy your day! 🌟</p>
+        <button onclick="logout()" class="logoutBtn">Logout</button>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
