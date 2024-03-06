@@ -1,3 +1,16 @@
+
+function checkPassword() {
+    var password = document.getElementById("password").value;
+    // Imposta la password desiderata qui
+    var correctPassword = "ellenmezza20";
+
+    if (password === correctPassword) {
+        // Password corretta, reindirizza alla pagina principale
+        window.location.href = "index.html"; // Modifica "index.html" con il nome della tua pagina principale
+    } else {
+        alert("Password incorrect. Please try again.");
+    }
+}
 function addTask() {
     var taskInput = document.getElementById("taskInput");
     var taskList = document.getElementById("taskList");
