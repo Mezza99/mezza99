@@ -43,6 +43,18 @@ button:hover {
     float: right;
 }
 
-.showMessageBtn {
-    margin-top: 20px;
+.taskItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.deleteTaskBtn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
 }
